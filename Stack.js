@@ -13,6 +13,7 @@ class Stack {
 		if (value !== undefined) {
 			this._storage[this._length] = value;
 			this._length++;
+			return value;
 		}
 	}
 
