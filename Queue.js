@@ -14,7 +14,7 @@ class Queue {
 	 */
 	enqueue(value) {
 		if (value !== undefined) {
-			this._storage[this._length] = value;
+			this._storage[this._length + this._headIndex] = value;
 			this._length++;
 			return value;
 		}
@@ -49,5 +49,11 @@ q.enqueue(3);
 console.log(q);
 q.dequeue();
 q.dequeue();
-console.log(q.peek());
+console.log(q.peek()); // 3
+q.dequeue();
+console.log(q.peek()); // undefined
+q.enqueue(1);
+q.enqueue(2);
+q.dequeue();
+console.log(q.peek()); // 2
 console.log(q);
