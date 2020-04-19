@@ -6,7 +6,7 @@ class Queue {
 	constructor() {
 		this._storage = {};
 		this._length = 0;
-		this._position = 0;
+		this._headIndex = 0;
 	}
 	/*
 	 * Enqueues a new value at the end of the queue
@@ -26,10 +26,10 @@ class Queue {
 	 */
 	dequeue() {
 		if (this._length > 0) {
-			const firstVal = this._storage[this._position];
-			delete this._storage[this._position];
+			const firstVal = this._storage[this._headIndex];
+			delete this._storage[this._headIndex];
 			this._length--;
-			this._position++;
+			this._headIndex++;
 			return firstVal;
 		}
 	}
@@ -38,7 +38,7 @@ class Queue {
 	 * @return {*} the first and oldest value in the queue
 	 */
 	peek() {
-		return this._storage[this._position];
+		return this._storage[this._headIndex];
 	}
 }
 
