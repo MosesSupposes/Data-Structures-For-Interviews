@@ -13,7 +13,7 @@ class Queue {
 	 * @param {*} value the value to enqueue
 	 */
 	enqueue(value) {
-		if (value) {
+		if (value !== undefined) {
 			this._storage[this._length] = value;
 			this._length++;
 			return value;
