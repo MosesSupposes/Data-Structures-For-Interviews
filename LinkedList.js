@@ -28,7 +28,7 @@ class LinkedList {
 				return node;
 			}
 
-			if (node2.next === null) {
+			if (this.isTail(node2.next) && !isEqual(node1, node2.next)) {
 				throw new ReferenceError(
 					`The node with value ${value} is not in this list.`
 				);
